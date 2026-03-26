@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alkimi Ad Operations — Service Level Agreement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --surface-1: #121218;
+      --surface-2: #1A1A22;
+      --surface-3: #2A2A35;
+      --purple: #5C26FF;
+      --purple-light: #8A5CFF;
+      --purple-dark: #4A1ECC;
+      --green: #00E87B;
+      --green-light: #4ADE80;
+      --grey-light: #C8C8D0;
+      --grey-mid: #7A7A85;
+      --white: #FFFFFF;
+      --error: #FF4D6A;
+      --border: rgba(255,255,255,0.08);
+      --font-title: 'Unbounded', system-ui, sans-serif;
+      --font-body: 'Poppins', system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--grey-light);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    nav .logo { color: var(--white); display: flex; align-items: center; }
+    nav .logo svg { height: 24px; width: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul li a {
+      color: var(--grey-mid);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: var(--white); }
+
+    nav .badge {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(0,232,123,0.1);
+      border: 1px solid rgba(0,232,123,0.2);
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 40px 80px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(92,38,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .overline {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #5C26FF, #00E87B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.0625rem;
+      color: var(--grey-mid);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8125rem;
+      color: var(--grey-mid);
+    }
+
+    .hero-meta-item .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 8px;
+    }
+
+    /* ── PRIORITY GRID ── */
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .priority-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .priority-card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .priority-card.p1 { border-top: 3px solid var(--error); }
+    .priority-card.p2 { border-top: 3px solid var(--purple-light); }
+    .priority-card.p3 { border-top: 3px solid var(--green); }
+
+    .priority-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .priority-pill.p1 { background: rgba(255,77,106,0.12); color: var(--error); }
+    .priority-pill.p2 { background: rgba(138,92,255,0.12); color: var(--purple-light); }
+    .priority-pill.p3 { background: rgba(0,232,123,0.12); color: var(--green); }
+
+    .priority-card h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .priority-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .priority-card ul li {
+      font-size: 0.875rem;
+      color: var(--grey-light);
+      padding-left: 16px;
+      position: relative;
+    }
+    .priority-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--grey-mid);
+    }
+
+    /* ── SLA TABLE CARDS ── */
+    .sla-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sla-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .sla-card:hover { border-color: rgba(255,255,255,0.14); }
+
+    .sla-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sla-card-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .sla-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(92,38,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .sla-card-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .sla-card-header .chevron {
+      color: var(--grey-mid);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .sla-card.open .chevron { transform: rotate(180deg); }
+
+    .sla-card-body {
+      display: none;
+      padding: 0 28px 28px;
+      border-top: 1px solid var(--border);
+    }
+    .sla-card.open .sla-card-body { display: block; }
+
+    .sla-timeframes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .timeframe-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .timeframe-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .timeframe-label.p1 { color: var(--error); }
+    .timeframe-label.p2 { color: var(--purple-light); }
+    .timeframe-label.p3 { color: var(--green); }
+    .timeframe-label.ack { color: var(--grey-mid); }
+
+    .timeframe-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .timeframe-note {
+      font-size: 0.75rem;
+      color: var(--grey-mid);
+      margin-top: 4px;
+    }
+
+    .sla-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: rgba(92,38,255,0.08);
+      border: 1px solid rgba(92,38,255,0.2);
+      border-radius: 10px;
+      font-size: 0.8125rem;
+      color: var(--grey-light);
+    }
+
+    /* ── HOURS ── */
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .hours-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .hours-card .flag {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .hours-card h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hours-card .time {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hours-card .zone {
+      font-size: 0.8125rem;
+      color: var(--grey-mid);
+    }
+
+    .overlap-banner {
+      margin-top: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(92,38,255,0.15), rgba(0,232,123,0.1));
+      border: 1px solid rgba(92,38,255,0.25);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .overlap-banner .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(0,232,123,0.2);
+      flex-shrink: 0;
+    }
+
+    .overlap-banner p {
+      font-size: 0.875rem;
+      color: var(--grey-light);
+    }
+    .overlap-banner strong { color: var(--white); }
+
+    /* ── ESCALATION ── */
+    .escalation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .escalation-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .escalation-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .escalation-icon.p1 { background: rgba(255,77,106,0.15); }
+    .escalation-icon.after { background: rgba(92,38,255,0.15); }
+    .escalation-icon.miss { background: rgba(0,232,123,0.12); }
+
+    .escalation-item h4 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .escalation-item p {
+      font-size: 0.8125rem;
+      color: var(--grey-mid);
+    }
+
+    /* ── METRICS ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: var(--font-title);
+      font-size: 2.25rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #5C26FF, #00E87B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .metric-label {
+      font-size: 0.875rem;
+      color: var(--grey-mid);
+    }
+
+    /* ── REPORTING ── */
+    .reporting-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .reporting-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .reporting-item .freq-badge {
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .freq-badge.ongoing { background: rgba(0,232,123,0.12); color: var(--green); }
+    .freq-badge.weekly { background: rgba(92,38,255,0.15); color: var(--purple-light); }
+    .freq-badge.quarterly { background: rgba(255,255,255,0.08); color: var(--grey-light); }
+
+    .reporting-item p {
+      font-size: 0.875rem;
+      color: var(--grey-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: gap;
+      gap: 24px;
+    }
+
+    footer .logo svg { height: 20px; width: auto; color: var(--grey-mid); }
+
+    footer .doc-meta {
+      text-align: right;
+    }
+
+    footer .doc-meta p {
+      font-size: 0.8125rem;
+      color: var(--grey-mid);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      nav { padding: 0 20px; }
+      .hero { padding: 64px 20px 48px; }
+      .section { padding: 48px 20px; }
+      footer { padding: 40px 20px; flex-direction: column; align-items: flex-start; }
+      footer .doc-meta { text-align: left; }
+      .hero-meta { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="68 46 216 48" fill="none">
+      <path d="M83.8615 58.6759C78.5907 58.5085 73.4034 59.9878 69.0608 62.8966L72.2676 68.7C75.3341 66.4522 79.084 65.2623 82.9241 65.3187C88.7704 65.3187 91.6565 68.0525 91.6565 72.7289V73.2325H82.5787C71.9222 73.2325 68 77.693 68 83.4005C68 89.1081 73.057 93.6166 81.074 93.6166C86.3283 93.6166 90.1518 91.9618 92.1005 89.0121V93.1609H99.8462V73.0646C99.8462 63.2323 93.9999 58.6759 83.8861 58.6759H83.8615ZM91.6319 82.5132C90.9055 84.187 89.6588 85.5979 88.0663 86.5483C86.4738 87.4987 84.6154 87.9409 82.7514 87.8131C78.5332 87.8131 76.0417 85.9665 76.0417 83.0168C76.0417 80.6187 77.5465 78.4844 83.1461 78.4844H91.6319V82.4413V82.5132Z" fill="currentColor"/>
+      <path d="M113.711 46H105.497V93.4109H113.711V46Z" fill="currentColor"/>
+      <path d="M145.855 93.7292H155.845L139.811 73.9447L154.464 59.6278H144.597L127.576 74.9519V46H119.361V93.7292H127.576V84.7362L133.693 79.1006L145.855 93.7292Z" fill="currentColor"/>
+      <path d="M167.592 59.3477H159.378V93.473H167.592V59.3477Z" fill="currentColor"/>
+      <path d="M218.253 59.034C215.761 58.9459 213.281 59.412 211.002 60.397C208.724 61.382 206.707 62.8597 205.105 64.7176C203.822 62.8392 202.051 61.324 199.972 60.3258C197.892 59.3277 195.578 58.8819 193.264 59.034C191.102 58.9506 188.947 59.3381 186.958 60.1679C184.97 60.9977 183.197 62.2489 181.769 63.8302V59.4896H173.949V93.591H182.164V76.2765C182.164 69.5138 185.839 66.0605 191.291 66.0605C196.224 66.0605 199.184 69.0102 199.184 75.0774V93.591H207.399V76.2765C207.399 69.5138 211.148 66.0605 216.526 66.0605C221.46 66.0605 224.42 69.0102 224.42 75.0774V93.591H232.634V74.0463C232.634 63.7583 226.714 59.1059 218.253 59.1059" fill="currentColor"/>
+      <path d="M246.093 85.2653V67.2933C246.093 62.7562 242.415 59.0781 237.877 59.0781V93.4804C242.415 93.4804 246.093 89.8024 246.093 85.2653Z" fill="currentColor"/>
+      <path d="M262.163 59.0781C260.952 59.0781 261.062 60.3218 261.503 60.7674C261.985 61.1977 263.589 62.8645 263.589 62.8645L263.589 67.5642C263.589 67.5642 254.221 84.7493 253.026 86.9955C251.49 89.8835 253.906 93.4804 256.657 93.4804C258.562 93.4804 275.266 93.4804 278.111 93.4804C281.412 93.4804 283.833 90.0974 282.292 86.9955C281.75 85.9032 271.51 67.5642 271.51 67.5642V62.867L273.621 60.7674C274.267 60.1379 273.968 59.0781 273.044 59.0781C272.12 59.0781 263.549 59.0781 262.163 59.0781Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <ul>
+    <li><a href="#priorities">Priorities</a></li>
+    <li><a href="#sla-timeframes">SLA Timeframes</a></li>
+    <li><a href="#hours">Operating Hours</a></li>
+    <li><a href="#metrics">Metrics</a></li>
+  </ul>
+  <span class="badge">v1.0 — August 2025</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="overline">Ad Operations</p>
+  <h1>Service Level <span>Agreement</span></h1>
+  <p>Clear, committed response times for every type of campaign request — so you always know what to expect and when.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="dot"></div>
+      <span>Approved by COO & VP Platform Operations</span>
+    </div>
+    <div class="hero-meta-item">
+      <div class="dot"></div>
+      <span>Effective August 2025</span>
+    </div>
+    <div class="hero-meta-item">
+      <div class="dot"></div>
+      <span>Next review: November 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRIORITY CLASSIFICATION -->
+<section class="section" id="priorities">
+  <div class="section-header">
+    <p class="overline">Framework</p>
+    <h2>Priority Classification</h2>
+  </div>
+  <div class="priority-grid">
+    <div class="priority-card p1">
+      <div class="priority-pill p1">P1 — High Priority</div>
+      <h3>Critical Issues</h3>
+      <ul>
+        <li>Critical issues affecting live campaigns</li>
+        <li>Budget exhaustion alerts</li>
+        <li>Creative policy violations</li>
+        <li>Technical failures preventing delivery</li>
+      </ul>
+    </div>
+    <div class="priority-card p2">
+      <div class="priority-pill p2">P2 — Medium Priority</div>
+      <h3>Standard Operations</h3>
+      <ul>
+        <li>Standard campaign optimisations</li>
+        <li>Routine creative changes</li>
+        <li>Non-critical targeting adjustments</li>
+      </ul>
+    </div>
+    <div class="priority-card p3">
+      <div class="priority-pill p3">P3 — Low Priority</div>
+      <h3>Administrative</h3>
+      <ul>
+        <li>Reporting requests</li>
+        <li>Enhancement requests</li>
+        <li>Non-urgent administrative changes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SLA TIMEFRAMES -->
+<section class="section" id="sla-timeframes">
+  <div class="section-header">
+    <p class="overline">Commitments</p>
+    <h2>SLA Timeframes by Request Type</h2>
+  </div>
+  <div class="sla-grid">
+
+    <!-- Reports -->
+    <div class="sla-card open">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">📊</div>
+          <h3>Reports</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">Standard Reports</div>
+            <div class="timeframe-value">24 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">Custom Reports</div>
+            <div class="timeframe-value">1–2 business days</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">Ad-hoc Analysis</div>
+            <div class="timeframe-value">2–3 business days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creative Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">🎨</div>
+          <h3>Creative Changes</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+            <div class="timeframe-note">Within business hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">P1 – Policy Violations</div>
+            <div class="timeframe-value">2–4 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">P2 – Standard Changes</div>
+            <div class="timeframe-value">Next business day</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">P3 – Non-critical</div>
+            <div class="timeframe-value">2–3 business days</div>
+          </div>
+        </div>
+        <div class="sla-note">Requests submitted after 6:00 PM IST will be addressed the following business day unless classified as P1.</div>
+      </div>
+    </div>
+
+    <!-- Date Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">📅</div>
+          <h3>Date Changes</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">Campaign Extension</div>
+            <div class="timeframe-value">2–4 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">Start Delay</div>
+            <div class="timeframe-value">1 business day notice required</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">Flight Adjustments</div>
+            <div class="timeframe-value">Same day</div>
+            <div class="timeframe-note">If submitted by 2:00 PM GMT / 6:00 PM IST</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Targeting Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">🎯</div>
+          <h3>Targeting Changes</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">P1 – Live Campaign</div>
+            <div class="timeframe-value">2–4 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">P2 – Optimisation</div>
+            <div class="timeframe-value">Next business day</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">P3 – Future Campaigns</div>
+            <div class="timeframe-value">2 business days</div>
+          </div>
+        </div>
+        <div class="sla-note">Targeting optimisations typically take 24–48 hours to fully reflect in the platform once implemented.</div>
+      </div>
+    </div>
+
+    <!-- Site List / Domain Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">🌐</div>
+          <h3>Site List / Domain Changes</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">P1 – Brand Safety</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">P2 – Standard Updates</div>
+            <div class="timeframe-value">4–6 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">P3 – Bulk Updates</div>
+            <div class="timeframe-value">Next business day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pacing Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">⚡</div>
+          <h3>Pacing Changes</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">P1 – Under-delivery Risk</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">P2 – Standard Optimisation</div>
+            <div class="timeframe-value">4–8 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">P3 – Future Planning</div>
+            <div class="timeframe-value">Next business day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Budget Changes -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">💰</div>
+          <h3>Budget Changes — Up/Down Weights</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">P1 – Critical Adjustments</div>
+            <div class="timeframe-value">2–4 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">P2 – Standard Changes</div>
+            <div class="timeframe-value">Next business day</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">P3 – Future Campaigns</div>
+            <div class="timeframe-value">2 business days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Campaign Setup -->
+    <div class="sla-card">
+      <div class="sla-card-header" onclick="toggleCard(this)">
+        <div class="sla-card-title">
+          <div class="sla-icon">🚀</div>
+          <h3>Budget Upweight via New IO (New Campaign Setup)</h3>
+        </div>
+        <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sla-card-body">
+        <div class="sla-timeframes">
+          <div class="timeframe-item">
+            <div class="timeframe-label ack">Acknowledgement</div>
+            <div class="timeframe-value">1–2 hours</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p2">Full Campaign Setup</div>
+            <div class="timeframe-value">2–3 business days</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p1">Rush Setup (P1)</div>
+            <div class="timeframe-value">Escalation required</div>
+            <div class="timeframe-note">Contact VP Platform Operations directly</div>
+          </div>
+          <div class="timeframe-item">
+            <div class="timeframe-label p3">Complex Multi-format</div>
+            <div class="timeframe-value">3–5 business days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OPERATING HOURS -->
+<section class="section" id="hours">
+  <div class="section-header">
+    <p class="overline">Coverage</p>
+    <h2>Operating Hours</h2>
+  </div>
+  <div class="hours-grid">
+    <div class="hours-card">
+      <div class="flag">🇬🇧</div>
+      <h4>UK Operations</h4>
+      <div class="time">9:00 AM – 5:30 PM</div>
+      <div class="zone">GMT · Monday – Friday</div>
+    </div>
+    <div class="hours-card">
+      <div class="flag">🇮🇳</div>
+      <h4>India Operations</h4>
+      <div class="time">9:00 AM – 6:00 PM</div>
+      <div class="zone">IST · Monday – Friday</div>
+    </div>
+  </div>
+  <div class="overlap-banner">
+    <div class="pulse"></div>
+    <p><strong>Prime response window:</strong> 1:30 PM – 5:30 PM GMT — both UK and India operations are active simultaneously, ensuring the fastest response times for requests submitted in this window.</p>
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="section-header" style="margin-bottom:24px;">
+      <p class="overline">Escalation</p>
+      <h2>Escalation Process</h2>
+    </div>
+    <div class="escalation-list">
+      <div class="escalation-item">
+        <div class="escalation-icon p1">🔴</div>
+        <div>
+          <h4>P1 Issues — Immediate</h4>
+          <p>Raised via the shared Ad Operations inbox with immediate notification to the Ad Operations Manager and VP Platform Operations. All P1 issues are tracked through our internal ticketing system.</p>
+        </div>
+      </div>
+      <div class="escalation-item">
+        <div class="escalation-icon after">🌙</div>
+        <div>
+          <h4>After-hours P1</h4>
+          <p>Emergency P1 issues outside standard business hours are handled via the designated UK team emergency contact. Please use this route only for critical live campaign failures.</p>
+        </div>
+      </div>
+      <div class="escalation-item">
+        <div class="escalation-icon miss">⚠️</div>
+        <div>
+          <h4>SLA Miss</h4>
+          <p>Any missed SLA triggers an automatic notification to the Ad Operations Manager and VP Platform Operations for immediate review and remediation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY METRICS -->
+<section class="section" id="metrics">
+  <div class="section-header">
+    <p class="overline">Performance</p>
+    <h2>Key Success Metrics</h2>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <span class="metric-value">95%</span>
+      <div class="metric-label">Acknowledgement SLA compliance</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">90%</span>
+      <div class="metric-label">Resolution SLA compliance</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">4.5+</span>
+      <div class="metric-label">Client satisfaction target (out of 5.0)</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">&lt;5%</span>
+      <div class="metric-label">Error rate on completed requests</div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="section-header" style="margin-bottom:24px;">
+      <p class="overline">Governance</p>
+      <h2>Measurement & Reporting Cadence</h2>
+    </div>
+    <div class="reporting-list">
+      <div class="reporting-item">
+        <span class="freq-badge ongoing">Ongoing</span>
+        <p>Regular check-ins (every other day to start) between Head of Demand and VP Platform Operations</p>
+      </div>
+      <div class="reporting-item">
+        <span class="freq-badge weekly">Weekly</span>
+        <p>SLA Performance Reviews with COO and VP Platform Operations</p>
+      </div>
+      <div class="reporting-item">
+        <span class="freq-badge quarterly">Quarterly</span>
+        <p>Full SLA Review and Adjustment — timeframes updated based on operational capacity and client feedback</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="68 46 216 48" fill="none">
+      <path d="M83.8615 58.6759C78.5907 58.5085 73.4034 59.9878 69.0608 62.8966L72.2676 68.7C75.3341 66.4522 79.084 65.2623 82.9241 65.3187C88.7704 65.3187 91.6565 68.0525 91.6565 72.7289V73.2325H82.5787C71.9222 73.2325 68 77.693 68 83.4005C68 89.1081 73.057 93.6166 81.074 93.6166C86.3283 93.6166 90.1518 91.9618 92.1005 89.0121V93.1609H99.8462V73.0646C99.8462 63.2323 93.9999 58.6759 83.8861 58.6759H83.8615ZM91.6319 82.5132C90.9055 84.187 89.6588 85.5979 88.0663 86.5483C86.4738 87.4987 84.6154 87.9409 82.7514 87.8131C78.5332 87.8131 76.0417 85.9665 76.0417 83.0168C76.0417 80.6187 77.5465 78.4844 83.1461 78.4844H91.6319V82.4413V82.5132Z" fill="currentColor"/>
+      <path d="M113.711 46H105.497V93.4109H113.711V46Z" fill="currentColor"/>
+      <path d="M145.855 93.7292H155.845L139.811 73.9447L154.464 59.6278H144.597L127.576 74.9519V46H119.361V93.7292H127.576V84.7362L133.693 79.1006L145.855 93.7292Z" fill="currentColor"/>
+      <path d="M167.592 59.3477H159.378V93.473H167.592V59.3477Z" fill="currentColor"/>
+      <path d="M218.253 59.034C215.761 58.9459 213.281 59.412 211.002 60.397C208.724 61.382 206.707 62.8597 205.105 64.7176C203.822 62.8392 202.051 61.324 199.972 60.3258C197.892 59.3277 195.578 58.8819 193.264 59.034C191.102 58.9506 188.947 59.3381 186.958 60.1679C184.97 60.9977 183.197 62.2489 181.769 63.8302V59.4896H173.949V93.591H182.164V76.2765C182.164 69.5138 185.839 66.0605 191.291 66.0605C196.224 66.0605 199.184 69.0102 199.184 75.0774V93.591H207.399V76.2765C207.399 69.5138 211.148 66.0605 216.526 66.0605C221.46 66.0605 224.42 69.0102 224.42 75.0774V93.591H232.634V74.0463C232.634 63.7583 226.714 59.1059 218.253 59.1059" fill="currentColor"/>
+      <path d="M246.093 85.2653V67.2933C246.093 62.7562 242.415 59.0781 237.877 59.0781V93.4804C242.415 93.4804 246.093 89.8024 246.093 85.2653Z" fill="currentColor"/>
+      <path d="M262.163 59.0781C260.952 59.0781 261.062 60.3218 261.503 60.7674C261.985 61.1977 263.589 62.8645 263.589 62.8645L263.589 67.5642C263.589 67.5642 254.221 84.7493 253.026 86.9955C251.49 89.8835 253.906 93.4804 256.657 93.4804C258.562 93.4804 275.266 93.4804 278.111 93.4804C281.412 93.4804 283.833 90.0974 282.292 86.9955C281.75 85.9032 271.51 67.5642 271.51 67.5642V62.867L273.621 60.7674C274.267 60.1379 273.968 59.0781 273.044 59.0781C272.12 59.0781 263.549 59.0781 262.163 59.0781Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="doc-meta">
+    <p>Document Version 1.0 · August 2025</p>
+    <p>Approved by COO & VP Platform Operations</p>
+    <p>Next Review: November 2025</p>
+  </div>
+</footer>
+
+<script>
+  function toggleCard(header) {
+    const card = header.closest('.sla-card');
+    card.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
